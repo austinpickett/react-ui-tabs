@@ -5,19 +5,15 @@ const Tab = styled.div`
   display: inline-block;
   padding: 1em 2em;
   cursor: pointer;
-  border-top: 2px solid transparent;
+  border: ${props => props.active ? '1px solid #CECECE' : 'none'};
+  border-top: 2px solid ${props => props.active ? 'red' : 'transparent'};
+  border-bottom: 1px solid ${props => props.active ? 'transparent' : '#CECECE'};
   background: #FFF;
   position: relative;
-  top: 2px;
+  top: 1px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
-
-  &.active {
-    border: 1px solid #CECECE;
-    border-top: 2px solid red;
-    border-bottom: 2px solid #FFF;
-  }
 `
 
 export default props => <Tab {...props}>{props.name}</Tab>

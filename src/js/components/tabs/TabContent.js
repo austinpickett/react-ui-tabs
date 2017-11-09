@@ -6,7 +6,8 @@ const TabContent = styled.div`
   padding: 1em;
   font-family: serif;
   line-height: 1.3;
-  font-size: 1.5em
+  font-size: 1.5em;
+  display: ${props => props.active ? 'block' : 'none'}
 `
 
 export default props => <TabContent {...props}>{props.content}</TabContent>
