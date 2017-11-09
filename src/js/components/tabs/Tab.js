@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
-const StyledTab = styled.div`
+const Tab = styled.div`
   display: inline-block;
   padding: 1em 2em;
   cursor: pointer;
@@ -19,17 +19,5 @@ const StyledTab = styled.div`
     border-bottom: 2px solid #FFF;
   }
 `
-export default class Tab extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
 
-  render() {
-    return(
-      <StyledTab className={`tab ${this.props.active ? 'active' : ''}`}
-                 onClick={this.props.onClick}>
-        {this.props.name}
-      </StyledTab>
-    )
-  }
-}
+export default props => <Tab {...props}>{props.name}</Tab>
