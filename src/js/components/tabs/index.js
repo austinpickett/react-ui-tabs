@@ -62,18 +62,18 @@ export default class Tabs extends Component {
       <TabContainer>
         <Title>Tabs in ReactJS</Title>
         <StyledTabs className='tabs'>
-          {tabs.map((tab, index) =>
-            <Tab key={ tab.name }
-                 name={ tab.name }
+          {tabs.map(({ name }, index) =>
+            <Tab key={ name }
+                 name={ name }
                  onClick={ this._handleTabClick }
-                 active={ this.state.activeIndex == index } />
+                 active={ this.state.activeIndex === index } />
           )}
         </StyledTabs>
 
         <div className="contents">
-          {tabs.map((tab, index) =>
-            <TabContent key={ tab.name }
-                         content={ tab.content }
+          {tabs.map(({ name, content }, index) =>
+            <TabContent key={ name }
+                         content={ content }
                          active={ this.state.activeIndex == index } />
           )}
         </div>
