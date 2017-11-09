@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
-const StyledTabContent = styled.div`
+const TabContent = styled.div`
   border-top: 1px solid #CECECE;
   padding: 1em;
   font-family: serif;
@@ -9,19 +9,4 @@ const StyledTabContent = styled.div`
   font-size: 1.5em
 `
 
-export default class TabContent extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <StyledTabContent className="tab-content"
-           style={{
-             display: this.props.active ? 'block' : 'none'
-           }}>
-           {this.props.content}
-      </StyledTabContent>
-    )
-  }
-}
+export default props => <TabContent {...props}>{props.content}</TabContent>
